@@ -21,7 +21,7 @@ const CoinItem = ({ item, onPress }) => {
             </View>
 
             <View style={ styles.row }>
-                <Text style={ styles.percentText }>{ item.percent_change_1h }</Text>
+                <Text style={ styles.percentText }>{ parseFloat(item.percent_change_1h).toFixed(2) }</Text>
                 <Image source={ getImgArrow() } style={ styles.imgIcon } />
             </View>
         </Pressable>

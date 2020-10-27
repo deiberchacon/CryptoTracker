@@ -102,15 +102,15 @@ class CoinDetailsScreen extends Component {
         const section = [
             {
                 title: 'Market cap',
-                data: [coin.market_cap_usd]
+                data: [parseFloat(coin.market_cap_usd).toFixed(2)]
             },
             {
                 title: 'Volume 24th',
-                data: [coin.volume24]
+                data: [parseFloat(coin.volume24).toFixed(2)]
             },
             {
                 title: 'Change 24h',
-                data: [coin.percent_change_24h]
+                data: [parseFloat(coin.percent_change_24h).toFixed(2)]
             },
         ];
 
@@ -158,6 +158,7 @@ class CoinDetailsScreen extends Component {
                 <FlatList
                     style={styles.list} 
                     horizontal={true}
+                    keyExtractor={(item, i) => i.toString()}
                     data={markets}
                     renderItem={({item}) => <CoinMarketItem item={item} />}
                 />

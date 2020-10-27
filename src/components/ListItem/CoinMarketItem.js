@@ -6,7 +6,7 @@ const CoinMarketItem = ({ item }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.nameText}>{item.name}</Text>
-            <Text style={styles.priceText}>{item.price_usd}</Text>
+            <Text style={styles.priceText}>{parseFloat(item.price_usd).toFixed(2)}</Text>
         </View>
     );
 }
